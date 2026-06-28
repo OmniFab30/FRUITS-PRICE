@@ -19,4 +19,4 @@ FruitsPrice is a beginner-friendly React.js project that simulates a fruit shopp
 
 ## Screenshot
 
-![FruitsPrice UI](./src/assets/screenshot.png)
+![FruitsPrice UI](./src/assets/images/Fruits-Price-UI.png)
