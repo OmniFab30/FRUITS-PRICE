@@ -1,0 +1,120 @@
+:root {
+  /* ===========================
+      COLORS
+  =========================== */
+
+  --color-primary: #006168;
+  /* --color-primary-light: #818cf8;
+  --color-primary-dark: #3730a3; */
+
+  --color-secondary: #b4e1e4;
+  --color-success: #34c759;
+  --color-warning: #f29b10;
+  --color-danger: #ff383c;
+
+  /* Background */
+
+  --bg-color: #b4e1e4;
+  --bg-card: #e5e5ea;
+  --bg-white: #F4F7F2;
+
+  /* Text */
+
+  --text-primary: rgba(18, 18, 18, 0.95);
+  --text-secondary: #64748b;
+  --text-light: #94a3b8;
+
+  /* Border */
+  --border-card: 2px solid var(--color-primary);
+
+  /* ===========================
+      FONT
+  =========================== */
+
+  --font-family: "contrail";
+  --font-content: "Noto Sans";
+
+  
+  --font-xs: 12px;
+  --font-sm: 14px;
+  --font-md: 16px;
+  --font-lg: 20px;
+  --font-xl: 24px;
+  --font-2xl: 32px;
+  --font-3xl: 48px;
+  --font-4xl: 56px;
+
+
+  /* Font Weight */
+
+--fw-thin: 100;
+--fw-extra-light: 200;
+--fw-light: 300;
+--fw-regular: 400;
+--fw-medium: 500;
+--fw-semi-bold: 600;
+--fw-bold: 700;
+--fw-extra-bold: 800;
+--fw-black: 900;
+
+  /* ===========================
+      SPACING
+  =========================== */
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 40px;
+  --space-9: 48px;
+  --space-10: 64px;
+
+  /* ===========================
+      BORDER RADIUS
+  =========================== */
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-round: 999px;
+
+  /* ===========================
+      SHADOW
+  =========================== */
+
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.08);
+
+  --shadow-md: 0 5px 15px rgba(0,0,0,.12);
+
+  --shadow-lg: 0 10px 30px rgba(0,0,0,.15);
+
+  /* ===========================
+      TRANSITION
+  =========================== */
+
+  --transition-fast: .2s ease;
+  --transition-normal: .3s ease;
+  --transition-slow: .5s ease;
+
+  /* ===========================
+      Z-INDEX
+  =========================== */
+
+  --z-dropdown: 100;
+  --z-sticky: 500;
+  --z-fixed: 1000;
+  --z-modal: 2000;
+  --z-toast: 3000;
+
+  /* ===========================
+      WIDTH
+  =========================== */
+
+  --container-width: 1200px;
+  --navbar-height: 70px;
+}

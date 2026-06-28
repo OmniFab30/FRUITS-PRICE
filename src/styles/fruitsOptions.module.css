@@ -1,0 +1,58 @@
+.priceContent{
+    max-width: 140px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--space-1);
+    margin-bottom: 5px;
+}
+
+.priceValue{
+    font-family: var(--font-family);
+    font-size: var(--font-xl);
+    font-weight: var(--fw-black);
+    color: var(--color-warning );
+}
+
+.select_container{
+    position: relative;
+    width: 300px;
+}
+
+.select_container select{
+    width: 100%;
+    height: 40px;
+    border-radius: var(--space-2);
+    padding: var(--space-2) var(--space-4) var(--space-2) var(--space-4);
+    margin: var(--space-3) 0 var(--space-5) var(--space-2);
+    font-family: var(--font-content);
+    font-size: var(--font-sm);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.select_container select:hover{
+    border: 2px solid var(--bg-card);
+}
+
+.select_container select option{
+    background: var(--bg-card);
+}
+
+.select_container select option:hover{
+    background-color: var(--bg-color);
+}
+
+.arrow{
+    position: absolute;
+    right: 8px;
+    top:50%;
+    transform:translateY(-60%) rotate(-90deg);
+    width:16px;
+    height:16px;
+    pointer-events:none;
+}
+
+
+
