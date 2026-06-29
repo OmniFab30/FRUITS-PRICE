@@ -1,7 +1,7 @@
 import { useState } from "react"
 import styles from "../styles/QuantityButton.module.css"
 
-export default function QuantityButton({label = ""}){
+export default function QuantityButton(props){
     //state
     const [quantity, setQuantity] = useState(0)
 
@@ -9,29 +9,33 @@ export default function QuantityButton({label = ""}){
     //decrement
     function decrement () {
         setQuantity(quantity => Math.max(0, quantity - 1))
+        props.getQuantity(quantity)
     }
 
     //increment 
     function increment () {
         setQuantity(quantity => quantity + 1)
+        props.getQuantity(quantity)
     }
 
     //render
     return (<>
         <div className={styles.quantityBox}>
-            <p className={styles.label}>{label}</p>
+            <p className={styles.label}>{props.label}</p>
             <div className={styles.quantityFrame}>
                 <div className={styles.quantityContent}>
                     <CircleButton 
-                    operator={"-"} 
-                    onClick = {decrement}
-                    disabled={quantity === 0}
+                        operator={"-"} 
+                        onClick = {decrement}
+                        disabled={quantity === 0}
                     />
-                    <QuantityCounter quantity={quantity} />
+                    <QuantityCounter 
+                        quantity={quantity} 
+                    />
                     <CircleButton 
-                    operator={"+"} 
-                    onClick = {increment}
-                    disabled={false}
+                        operator={"+"} 
+                        onClick = {increment}
+                        disabled={false}
                     />
                 </div>
             </div>

@@ -1,5 +1,4 @@
 .priceContent{
-    max-width: 140px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -7,11 +6,17 @@
     margin-bottom: 5px;
 }
 
-.priceValue{
+.priceValue, .priceValueFalse{
     font-family: var(--font-family);
-    font-size: var(--font-xl);
     font-weight: var(--fw-black);
-    color: var(--color-warning );
+}
+
+.priceValue{
+    font-size: var(--font-xl);
+}
+
+.priceValueFalse{
+    font-size: var(--font-2xl);
 }
 
 .select_container{
@@ -44,6 +49,7 @@
     background-color: var(--bg-color);
 }
 
+
 .arrow{
     position: absolute;
     right: 8px;
@@ -53,6 +59,4 @@
     height:16px;
     pointer-events:none;
 }
-
-
 

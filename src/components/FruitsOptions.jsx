@@ -1,9 +1,9 @@
 import { useState } from "react";
-import styles from "../styles/QuantityButton.module.css"
 import fruitsOptions from "../styles/fruitsOptions.module.css"
 import arrow from "../assets/icons/left.png"
+import PriceComponent from "../components/Price"
 
-export default function FruitsOptions({cardTitle = ""}){
+export default function FruitsOptions(props){
     //state 
     const [fruits] = useState([
         {id: 0, name: "Select a Fruit", price: "_"},
@@ -23,7 +23,7 @@ export default function FruitsOptions({cardTitle = ""}){
             key={fruit.id}
             value={fruit.name}
         >
-        {fruit.name}
+            {fruit.name}
         </option>
     ))
 
@@ -33,32 +33,33 @@ export default function FruitsOptions({cardTitle = ""}){
             fruit => fruit.name === e.target.value
         )
         setSelectedFruit(fruit)
+        props.getPrice(fruit.price)
     }
 
     //render
     return (<>
         <div>
-            <h2>{cardTitle}</h2>
+            <h2>{props.cardTitle}</h2>
             <div className={fruitsOptions.select_container}>
                 <select 
-                name="fruitsOption"
-                onChange={priceCorresponding}
+                    name="fruitsOption"
+                    onChange={priceCorresponding}
                 >
                     {fruitsOptionsList}
                 </select>
-            <img src={arrow} className={fruitsOptions.arrow} alt=""/>
+                <img 
+                    src={arrow} 
+                    className={fruitsOptions.arrow} 
+                />
             </div>
-            <PriceComponent labelPrice="Price" priceValue={selectedFruit.price}/>
+            <PriceComponent 
+                max-width="140px"
+                color="var(--color-warning)"
+                labelPrice="Price : " 
+                isTrue={true}
+                priceValue={selectedFruit.price}
+            />
         </div>
     </>
     );
-}
-
-function PriceComponent({labelPrice, priceValue}){
-    return (<>
-        <div className={fruitsOptions.priceContent}>
-            <p className={styles.label}>{labelPrice} :</p>
-            <span className={fruitsOptions.priceValue}>{`${priceValue} Ar`}</span>
-        </div>
-    </>)
 }

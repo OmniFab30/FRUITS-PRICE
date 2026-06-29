@@ -1,17 +1,13 @@
-import FruitsCard from "./components/FruitsCard";
+// import FruitsCard from "./components/FruitsCard";
+import mainStyle from "./styles/App.module.css";
+import ContentMainCard from "./components/ContentMainCard"
 
 export default function App() {
   //render
   return (
     <>
-      <div style={{
-        width:"100vw",
-        height:"100vh",
-        display:"flex",
-        justifyContent:"center",
-        alignItems:"center",
-      }}>
-        <FruitsCard/>
+      <div className={mainStyle.main}>
+        <ContentMainCard/>
       </div>
     </>
   );

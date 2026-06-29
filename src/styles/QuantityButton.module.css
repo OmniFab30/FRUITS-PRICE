@@ -57,3 +57,10 @@
   font-weight: var(--fw-black);
   color: var(--color-primary);
 }
+
+.labelFalse{
+  font-family: var(--font-family);
+  font-size: var(--font-ms);
+  font-weight: var(--fw-black);
+  color: var(--bg-white);
+}

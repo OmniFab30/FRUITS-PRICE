@@ -5,7 +5,6 @@
     align-items: flex-end;
     border: var(--border-card);
     background-color: var(--bg-white);
-    margin: var(--space-5);
     padding: var(--space-6);
     border-radius: var(--radius-xl);
 }

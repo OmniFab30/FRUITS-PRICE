@@ -8,6 +8,7 @@ body {
     font-family: var(--font-primary);
     background: var(--bg-color);
     color: var(--text-primary);
+    overflow: hidden;
 }
 
 button,
@@ -37,10 +38,17 @@ ul {
     list-style: none;
 }
 
+h1{
+    font-size: var(--font-2xl);
+}
+
 h2{
-    font-family: var(--font-family);
     font-size: var(--font-lg);
     font-weight: var(--fw-bold);
+}
+
+h1,h2{
+    font-family: var(--font-family);
     color: var(--color-primary);
 }
 
