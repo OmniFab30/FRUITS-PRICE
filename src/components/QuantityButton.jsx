@@ -8,14 +8,20 @@ export default function QuantityButton(props){
     //quantity behavior
     //decrement
     function decrement () {
-        setQuantity(quantity => Math.max(0, quantity - 1))
-        props.getQuantity(quantity)
+        setQuantity(prev => {
+            const newQuantity = Math.max(0, prev - 1)
+            props.setQuantity(newQuantity)
+            return newQuantity
+        });
     }
 
     //increment 
     function increment () {
-        setQuantity(quantity => quantity + 1)
-        props.getQuantity(quantity)
+        setQuantity(prev => {
+            const newQuantity = Math.max(0, prev + 1)
+            props.setQuantity(newQuantity)
+            return newQuantity
+        });
     }
 
     //render

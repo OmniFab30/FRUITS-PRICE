@@ -1,5 +1,4 @@
-// import QuantityButton from "./QuantityButton";
-// import { useState } from "react";
+import { useEffect } from "react";
 import FruitsOptions from "./FruitsOptions";
 import QuantityButton from "./QuantityButton"
 import fruitsCardStyle from "../styles/fruitsCard.module.css"
@@ -8,22 +7,24 @@ import { useState } from "react";
 
 export default function FruitsCard(props) {
 
-  const [quantity, getQuantity] = useState(0)
-  const [price, getPrice] = useState(0)
+  const [price, setPrice] = useState(0)
+  const [quantity, setQuantity] = useState(0)
+  const expenses = price * quantity
 
-  const expenses = quantity * price
-  console.log(expenses)
+  useEffect(() => {
+    props.setExpenses(expenses);
+  }, [expenses, props]);
 
   //render
   return (<>
     <div className={fruitsCardStyle.fruitsCard}>
         <FruitsOptions 
           cardTitle={props.title}
-          getPrice={getPrice}
+          setPrice={setPrice}
         />
         <QuantityButton 
           label="Quantity : "
-          getQuantity={getQuantity}
+          setQuantity={setQuantity}
         />
         <p>{props.setExpenses}</p>
     </div>

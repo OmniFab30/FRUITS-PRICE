@@ -12,6 +12,7 @@ export default function FruitsOptions(props){
         {id: 3, name: "Orange", price: 400},
         {id: 4, name: "Watermelon", price: 700},
         {id: 5, name: "Pineapple", price: 1000}
+
     ])
 
     //fruit selected state
@@ -33,7 +34,7 @@ export default function FruitsOptions(props){
             fruit => fruit.name === e.target.value
         )
         setSelectedFruit(fruit)
-        props.getPrice(fruit.price)
+        props.setPrice(fruit.price)
     }
 
     //render

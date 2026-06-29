@@ -4,14 +4,21 @@ import mainCard from "../styles/contentMainCard.module.css"
 import PriceComponent from "./Price";
 
 export default function ContentMainCard(){
-    //state
+
+    //state for amount 
+    const [amount] = useState(50000)
 
     //state for expenses
-    const [expenses, setExpenses] = useState(0)
+    const [expensesCardFirst, setExpensesCardFirst] = useState(0)
+    const [expensesCardSecond, setExpensesCardSecond] = useState(0)
+    const expensesTotal = expensesCardFirst + expensesCardSecond
 
-    //state for amount
-    const [amount, setAmount] = useState(50000)
+    //state for new amount value
+    let newAmount = 0
 
+    if(amount >= expensesTotal) {
+        newAmount = amount - expensesTotal
+    }
 
     //render
     return (<>
@@ -20,9 +27,12 @@ export default function ContentMainCard(){
             <div className={mainCard.contentLeft}>
                 <FruitsCard 
                     title="First Fruit"
-                    setExpenses={setExpenses}
+                    setExpenses={setExpensesCardFirst}
                 />
-                <FruitsCard title="Second Fruit"/>
+                <FruitsCard 
+                    title="Second Fruit"
+                    setExpenses={setExpensesCardSecond}
+                />
             </div>
             <div className={mainCard.contentRight}>
                 <PriceComponent 
@@ -33,12 +43,12 @@ export default function ContentMainCard(){
                 <PriceComponent 
                     labelPrice="Expenses : "
                     color="var(--color-danger)"
-                    priceValue={expenses}
+                    priceValue={expensesTotal}
                 />
                 <PriceComponent 
                     color="var(--color-success)"
                     labelPrice="New Amount : "
-
+                    priceValue={newAmount}
                 />
             </div>
         </div>
